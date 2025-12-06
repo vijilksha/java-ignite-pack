@@ -10,6 +10,7 @@ import { useAccess } from '@/contexts/AccessContext';
 import { QrCode, Copy, Check, IndianRupee, Shield } from 'lucide-react';
 
 const UPI_ID = 'vijilksh2011-1@oksbi';
+const COURSE_FEE = 250;
 
 const Payment = () => {
   const [name, setName] = useState('');
@@ -122,6 +123,10 @@ const Payment = () => {
           </div>
           <CardTitle className="text-2xl text-foreground">Complete Your Payment</CardTitle>
           <CardDescription>Pay via UPI to unlock all Java Training modules</CardDescription>
+          <div className="pt-2">
+            <span className="text-4xl font-bold text-primary">₹{COURSE_FEE}</span>
+            <span className="text-muted-foreground ml-2">one-time fee</span>
+          </div>
         </CardHeader>
         
         <CardContent className="space-y-6">
@@ -141,7 +146,7 @@ const Payment = () => {
             <div className="flex flex-col items-center gap-2">
               <div className="w-48 h-48 bg-white rounded-xl p-2 shadow-inner flex items-center justify-center border">
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=${UPI_ID}&pn=JavaTraining`}
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=${UPI_ID}&pn=JavaTraining&am=${COURSE_FEE}`}
                   alt="UPI QR Code"
                   className="w-full h-full"
                 />
