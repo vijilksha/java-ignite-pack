@@ -76,14 +76,18 @@ const PPTSection = ({ slides }: PPTSectionProps) => {
               <div className="grid gap-4 md:grid-cols-2">
                 {/* Trainer Notes */}
                 {slide.trainerNotes && (
-                  <div className="rounded-lg bg-muted p-4">
-                    <div className="mb-2 flex items-center gap-2">
-                      <MessageSquare className="h-4 w-4 text-accent" />
-                      <span className="text-sm font-semibold text-foreground">
-                        Trainer Notes
+                  <div className="rounded-lg bg-gradient-to-br from-primary/5 to-accent/10 border border-primary/20 p-5 md:col-span-2">
+                    <div className="mb-3 flex items-center gap-2">
+                      <MessageSquare className="h-5 w-5 text-primary" />
+                      <span className="text-base font-semibold text-foreground">
+                        Trainer Explanation
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{slide.trainerNotes}</p>
+                    <div className="prose prose-sm max-w-none text-foreground/90">
+                      <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed bg-transparent p-0 m-0 border-none">
+                        {slide.trainerNotes}
+                      </pre>
+                    </div>
                   </div>
                 )}
 

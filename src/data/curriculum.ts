@@ -61,7 +61,35 @@ export const curriculumData: DayContent[] = [
           "Write Once, Run Anywhere (WORA) philosophy",
           "Used in enterprise, Android, web applications, and more"
         ],
-        trainerNotes: "Start with enthusiasm! Ask who has programmed before. Relate Java to apps they use daily.",
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Good morning everyone! Welcome to Day 1 of your Java journey. Let me start by asking - how many of you have used WhatsApp, Netflix, or any Android app today? Raise your hands!"
+
+[Wait for response]
+
+"Great! All those apps have one thing in common - they're either built with Java or running on Java technology. That's how powerful and widespread Java is!"
+
+📌 KEY TEACHING POINTS:
+
+1. **Why Java was created**: In the early 1990s, James Gosling was frustrated that software written for one computer wouldn't work on another. He dreamed of 'Write Once, Run Anywhere' - and Java was born!
+
+2. **The name story**: Java was originally called 'Oak' after a tree outside Gosling's office. Later renamed to Java - inspired by Java coffee. That's why the logo is a coffee cup!
+
+3. **Where Java is used TODAY**:
+   - Banking systems (ICICI, HDFC - all use Java)
+   - Android apps (yes, your phone runs Java!)
+   - Netflix, Amazon, LinkedIn - all built on Java
+   - Enterprise software in every major company
+
+4. **Why companies love Java**:
+   - It's been around for 25+ years (stable & mature)
+   - Huge community = easy to find solutions
+   - Scales from small apps to massive systems
+
+💡 ENGAGEMENT TIP: Ask students to name apps they use. Then reveal which ones use Java - they'll be amazed!
+
+⚠️ COMMON QUESTION: "Is Java hard to learn?" 
+Answer: "Java has clear, English-like syntax. If you can write 'System.out.println', you're already coding!"`,
         analogy: "Java is like a universal translator - write your code once, and it works on any computer, just like how a good translator can communicate the same message in any language."
       },
       {
@@ -72,8 +100,54 @@ export const curriculumData: DayContent[] = [
           "JDK (Java Development Kit): JRE + development tools (compiler, debugger)",
           "Relationship: JDK ⊃ JRE ⊃ JVM"
         ],
-        trainerNotes: "Draw the nested diagram on whiteboard. Emphasize that developers need JDK, users need JRE.",
-        diagram: "JDK → Contains → JRE → Contains → JVM",
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now, let me explain the three magical letters you'll hear a lot - JDK, JRE, and JVM. I'll make this super simple with a real-world example."
+
+📌 THE FACTORY ANALOGY (Draw on whiteboard):
+
+"Imagine you want to make a car:
+
+🏭 JDK (Java Development Kit) = THE ENTIRE CAR FACTORY
+   - Has all the tools: welding machines, paint shop, assembly line
+   - This is what WE developers need to BUILD programs
+   - Includes: compiler (javac), debugger, documentation tools
+
+🚗 JRE (Java Runtime Environment) = THE COMPLETE CAR  
+   - Ready to drive but you can't modify it
+   - This is what END USERS need to RUN programs
+   - Includes: JVM + standard libraries (pre-built code)
+
+⚙️ JVM (Java Virtual Machine) = THE ENGINE
+   - The heart that actually makes everything run
+   - Converts bytecode to machine code
+   - Different JVM for Windows, Mac, Linux - but same Java code works on all!"
+
+📌 THE NESTED RELATIONSHIP:
+"Think of Russian nesting dolls - the biggest doll (JDK) contains the medium doll (JRE), which contains the smallest doll (JVM)."
+
+💡 REAL-WORLD CONNECTION:
+"When your mom installs WhatsApp, she only needs JRE - just to RUN the app. But when YOU write code, you need JDK - to BUILD the app. Make sense?"
+
+⚠️ MEMORY TRICK: 
+- JDK = Developer's Kit (D for Developer)
+- JRE = Runtime Environment (R for Run)
+- JVM = Virtual Machine (V for Virtual - it virtualizes hardware)
+
+❓ CHECK UNDERSTANDING: "So if your friend wants to only run Java games, what does he need - JDK or JRE?"`,
+        diagram: `┌─────────────────────────────────────┐
+│  JDK (Java Development Kit)         │
+│  ┌─────────────────────────────┐    │
+│  │  JRE (Runtime Environment)  │    │
+│  │  ┌─────────────────────┐    │    │
+│  │  │  JVM (Virtual       │    │    │
+│  │  │  Machine)           │    │    │
+│  │  └─────────────────────┘    │    │
+│  │  + Core Libraries           │    │
+│  └─────────────────────────────┘    │
+│  + Compiler (javac)                 │
+│  + Debugger, Documentation Tools    │
+└─────────────────────────────────────┘`,
         analogy: "Think of it like a car factory: JVM is the engine, JRE is the complete car, and JDK is the entire factory with tools to build cars."
       },
       {
@@ -84,7 +158,59 @@ export const curriculumData: DayContent[] = [
           "Add Java bin folder to PATH",
           "Verify installation: java -version"
         ],
-        trainerNotes: "Do live demo. Have backup screenshots ready. Help students who face issues."
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Alright, now comes the exciting part - let's get Java installed on your machines! I'll do this step-by-step, and please follow along."
+
+📌 STEP-BY-STEP WALKTHROUGH:
+
+**STEP 1: Download JDK**
+"Go to oracle.com/java or better yet, use Adoptium (adoptium.net) - it's free and open source."
+- Download JDK 17 or 21 (LTS versions)
+- Choose Windows x64 Installer for Windows users
+
+**STEP 2: Install JDK**
+- Run the installer
+- Note the installation path: C:\\Program Files\\Java\\jdk-17
+- This is important for the next step!
+
+**STEP 3: Set JAVA_HOME**
+"Now, here's where most people get stuck. Let me show you exactly what to do..."
+
+For Windows:
+1. Search 'Environment Variables' in Start Menu
+2. Click 'Environment Variables' button
+3. Under System Variables, click 'New'
+4. Variable name: JAVA_HOME
+5. Variable value: C:\\Program Files\\Java\\jdk-17
+
+**STEP 4: Update PATH**
+1. Find 'Path' in System Variables
+2. Click 'Edit' → 'New'
+3. Add: %JAVA_HOME%\\bin
+4. Click OK on all windows
+
+**STEP 5: Verify Installation**
+Open NEW Command Prompt (important - new window!):
+\`\`\`
+java -version
+javac -version
+\`\`\`
+
+💡 TROUBLESHOOTING TIPS:
+- "Command not found" → Restart command prompt
+- Still not working → Check PATH spelling
+- Version mismatch → Multiple Java installations, check PATH order
+
+⚠️ COMMON MISTAKES:
+1. Opening old command prompt (won't have new PATH)
+2. Adding wrong path (bin folder missing)
+3. Typos in JAVA_HOME
+
+🆘 IF STUDENTS ARE STUCK:
+- Have them share screen
+- Check if java.exe exists in the bin folder
+- Verify environment variables are saved`
       },
       {
         title: "Your First Java Program",
@@ -94,7 +220,61 @@ export const curriculumData: DayContent[] = [
           "public static void main(String[] args)",
           "System.out.println(\"Hello, World!\");"
         ],
-        trainerNotes: "Type slowly, explain each keyword. Class name must match filename. Compile and run together."
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"This is the moment you've been waiting for! Your first Java program. I want you to type this EXACTLY as I show you - even a small mistake and it won't work."
+
+📌 LIVE CODING WALKTHROUGH:
+
+"Open Notepad (or VS Code if you have it). Type this exactly:"
+
+\`\`\`java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+\`\`\`
+
+**CRITICAL RULES** (Write on board):
+1. ⚠️ Filename MUST match class name EXACTLY
+   - Class: HelloWorld → File: HelloWorld.java
+   - NOT helloworld.java, NOT Helloworld.java
+
+2. ⚠️ Java is CASE-SENSITIVE
+   - System (capital S) ≠ system
+   - String (capital S) ≠ string
+
+3. ⚠️ Don't forget semicolons at line ends!
+
+📌 COMPILATION & EXECUTION:
+
+"Now open Command Prompt in the folder where you saved the file:"
+
+\`\`\`
+javac HelloWorld.java    // Compile
+java HelloWorld          // Run (no .class extension!)
+\`\`\`
+
+💡 EXPLAIN EACH PART:
+- \`public\`: Anyone can access this class
+- \`class HelloWorld\`: We're creating a template called HelloWorld
+- \`public static void main\`: The starting point - Java looks for this!
+- \`String[] args\`: Allows command-line arguments (ignore for now)
+- \`System.out.println\`: "System, output, print line" - prints text
+
+🎉 CELEBRATION MOMENT:
+"When you see 'Hello, World!' appear - congratulations! You've just written and executed your first Java program. You're officially a Java programmer!"
+
+⚠️ COMMON ERRORS & FIXES:
+1. "class HelloWorld is public, should be declared in a file named HelloWorld.java"
+   → Filename doesn't match class name
+
+2. "cannot find symbol: class system"
+   → Typed 'system' instead of 'System'
+
+3. "reached end of file while parsing"
+   → Missing closing brace }`
       },
       {
         title: "Understanding the Code Structure",
@@ -106,7 +286,51 @@ export const curriculumData: DayContent[] = [
           "main: Entry point of program",
           "String[] args: Command line arguments"
         ],
-        trainerNotes: "Don't go too deep into OOP yet. Just introduce concepts they'll learn later."
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now let's decode what each word in our program means. Don't worry about memorizing everything - just understand the concept."
+
+📌 KEYWORD-BY-KEYWORD BREAKDOWN:
+
+**1. public** (Access Modifier)
+"Think of it like a house with an open door - anyone can enter. 'public' means this class/method can be accessed from anywhere."
+
+**2. class** (Blueprint)
+"A class is like an architect's blueprint. It defines what something IS but isn't the actual thing yet. Our HelloWorld class is the blueprint."
+[Don't go deep into OOP - save for Day 6]
+
+**3. static** (Class-Level)
+"'static' means this method belongs to the class itself, not to any specific object. We haven't created any object, yet main() runs - that's because it's static!"
+
+Simple analogy: "A static method is like a factory's main switch. You don't need to make a product first to turn on the factory."
+
+**4. void** (Return Type)
+"'void' means 'nothing' in Latin. This method does its job but doesn't give back any result. It's like asking someone to clean a room - they do it, but don't hand you anything back."
+
+**5. main** (Entry Point)
+"When you run 'java HelloWorld', JVM looks for a method named EXACTLY 'main' with EXACTLY this signature. It's like the main door of a building - JVM enters through here."
+
+**6. String[] args** (Command Line Arguments)
+"This allows you to pass information when running the program:
+\`java HelloWorld John 25\`
+Here, args[0] = 'John', args[1] = '25'"
+[Just mention, don't go deep today]
+
+💡 THE COMPLETE PICTURE:
+\`\`\`
+public class HelloWorld {          // A public blueprint named HelloWorld
+    public static void main(       // The main entrance, accessible to JVM
+        String[] args              // Can receive text inputs
+    ) {
+        // Your code runs here
+    }
+}
+\`\`\`
+
+⚠️ IMPORTANT FOR FRESHERS:
+"You MUST memorize this structure! Every Java program starts with:
+public static void main(String[] args)
+This is non-negotiable - get it wrong, and your program won't run."`
       },
       {
         title: "Compilation and Execution",
@@ -116,8 +340,81 @@ export const curriculumData: DayContent[] = [
           "Step 3: Creates HelloWorld.class (bytecode)",
           "Step 4: Run with java HelloWorld"
         ],
-        trainerNotes: "Show the .class file. Explain bytecode is platform-independent.",
-        diagram: "Source Code (.java) → Compiler (javac) → Bytecode (.class) → JVM → Output"
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Let me explain the magic that happens when you compile and run Java code. This is what makes Java special!"
+
+📌 THE JOURNEY OF JAVA CODE:
+
+"When you write code and run it, it goes through a journey. Let me walk you through:"
+
+**STAGE 1: Source Code (.java file)**
+"This is what YOU write - human-readable code with words like 'public', 'class', 'println'."
+
+**STAGE 2: Compilation (javac command)**
+"The compiler reads your .java file and checks:
+- Is the syntax correct?
+- Are all variables declared?
+- Do the types match?
+If everything is fine, it creates bytecode."
+
+**STAGE 3: Bytecode (.class file)**
+"Open the .class file in Notepad - you'll see gibberish! That's bytecode - a special format that JVM understands. This is the SECRET to 'Write Once, Run Anywhere'!"
+
+[DEMO: Actually open .class file to show bytecode]
+
+**STAGE 4: JVM Execution**
+"JVM reads the bytecode and translates it to machine code specific to YOUR computer. Windows JVM creates Windows machine code, Mac JVM creates Mac machine code - but the .class file is THE SAME!"
+
+📌 THE FLOW DIAGRAM:
+\`\`\`
+[HelloWorld.java]
+       ↓
+   javac (Compiler)
+       ↓
+[HelloWorld.class] ← Bytecode (Platform Independent)
+       ↓
+   JVM (Interpreter/JIT)
+       ↓
+[Machine Code] ← Platform Specific
+       ↓
+   Output: Hello, World!
+\`\`\`
+
+💡 WHY THIS MATTERS:
+"Your company can develop on Windows, but deploy on Linux servers. The same .class files work everywhere - that's Java's superpower!"
+
+⚠️ COMMON MISTAKES:
+1. Running: \`java HelloWorld.class\` ❌
+   Correct: \`java HelloWorld\` ✓ (no extension!)
+
+2. Running: \`java helloworld\` ❌
+   Correct: \`java HelloWorld\` ✓ (case-sensitive!)
+
+3. Compiling: \`javac HelloWorld\` ❌
+   Correct: \`javac HelloWorld.java\` ✓ (include extension!)
+
+🔬 FUN EXPERIMENT:
+"Compile on Windows, copy the .class file to a Mac or Linux machine - it will run without changes! Try it at home."`,
+        diagram: `┌──────────────────┐
+│  HelloWorld.java │  ← You write this (Source Code)
+└────────┬─────────┘
+         ↓
+    ┌────────────┐
+    │   javac    │  ← Compiler checks & converts
+    └────────────┘
+         ↓
+┌──────────────────┐
+│ HelloWorld.class │  ← Platform-independent bytecode
+└────────┬─────────┘
+         ↓
+    ┌────────────┐
+    │    JVM     │  ← Runs on any OS
+    └────────────┘
+         ↓
+   ┌──────────┐
+   │  OUTPUT  │  → Hello, World!
+   └──────────┘`
       }
     ],
     lessonPlan: {
@@ -258,7 +555,39 @@ export const curriculumData: DayContent[] = [
           "Syntax: dataType variableName = value;",
           "Variable names follow camelCase convention"
         ],
-        trainerNotes: "Use the box analogy. Draw boxes with labels.",
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Good morning! Yesterday we wrote our first program. But all it did was print a fixed message. What if we want to store information and use it later? That's where VARIABLES come in!"
+
+📌 THE WAREHOUSE ANALOGY (Draw on whiteboard):
+
+"Imagine a warehouse with boxes:
+📦 Each box has a LABEL (variable name) - like 'age', 'salary', 'name'
+📦 Each box has a SIZE (data type) - small box for small numbers, big box for big numbers
+📦 Each box has CONTENTS (value) - the actual data stored inside"
+
+💡 REAL EXAMPLE:
+"In your banking app:
+- Your account number is stored in a variable
+- Your balance is stored in a variable  
+- Your name is stored in a variable
+Without variables, your bank couldn't remember anything!"
+
+📌 VARIABLE NAMING RULES:
+"Let me give you the rules - break these and Java will throw errors:
+
+✅ VALID names: age, firstName, total_count, _private, $dollar
+❌ INVALID names: 1stNumber (starts with digit), my-name (hyphen), class (reserved word)
+
+📌 NAMING CONVENTIONS (Best Practices):
+- Use camelCase: firstName, totalSalary, isActive
+- Make names meaningful: 'age' not 'a', 'salary' not 's'
+- Boolean names start with is/has: isActive, hasPermission"
+
+⚠️ COMMON BEGINNER MISTAKE:
+"Students often use single letters: int a, b, c. In interviews, this is a RED FLAG. Use meaningful names!"
+
+❓ QUICK QUIZ: "Which is better - 'int x = 25;' or 'int age = 25;'?"`,
         analogy: "Think of variables like labeled boxes in a warehouse. The label is the variable name, the box size is the data type, and what's inside is the value."
       },
       {
@@ -273,8 +602,69 @@ export const curriculumData: DayContent[] = [
           "char: 2 bytes (single character in quotes)",
           "boolean: true or false"
         ],
-        trainerNotes: "Create a comparison table. Emphasize int and double are most common.",
-        diagram: "byte(1) < short(2) < int(4) < long(8) | float(4) < double(8)"
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now, not all data is the same. A person's age, their salary, their name - they need different types of storage. Let me introduce you to the 8 primitive data types."
+
+📌 THE CONTAINER SIZE ANALOGY:
+
+"Think of it like buying containers at a store:
+🥃 Shot glass (byte) - tiny, holds small numbers
+🥛 Cup (short) - small 
+🍶 Jug (int) - medium, most commonly used
+🛢️ Barrel (long) - huge numbers
+
+Same logic for decimals:
+🧪 Test tube (float) - smaller decimal precision
+🧴 Bottle (double) - higher precision, more common"
+
+📌 WHEN TO USE WHAT (PRACTICAL GUIDE):
+
+\`\`\`
+byte   → Rarely used. Maybe for raw data, file processing
+short  → Rarely used. Maybe for memory-critical apps
+int    → YOUR DEFAULT for whole numbers! Age, count, ID
+long   → Population, file sizes, timestamps (add 'L' suffix!)
+
+float  → Rarely used directly (add 'f' suffix!)
+double → YOUR DEFAULT for decimals! Price, percentage, GPA
+
+char   → Single character: 'A', 'B', '1', '@' (single quotes!)
+boolean → true/false only: isActive, hasAccess
+\`\`\`
+
+💡 MEMORY TRICK - THE 80/20 RULE:
+"In 90% of your code, you'll use only: int, double, boolean, String
+The others are for special situations."
+
+📌 LIVE DEMO:
+\`\`\`java
+int age = 25;                    // Most common
+double salary = 50000.50;        // For money
+boolean isEmployed = true;       // Yes/No situations  
+long worldPopulation = 8000000000L;  // Notice the 'L'!
+\`\`\`
+
+⚠️ COMMON MISTAKES:
+1. Forgetting 'L' for long: long x = 8000000000; // ERROR!
+2. Forgetting 'f' for float: float x = 3.14; // ERROR!
+3. Using double quotes for char: char c = "A"; // ERROR! Use 'A'`,
+        diagram: `┌────────────────────────────────────────────────────┐
+│           JAVA PRIMITIVE DATA TYPES                │
+├─────────┬──────────┬───────────────────────────────┤
+│  TYPE   │   SIZE   │         RANGE/USE             │
+├─────────┼──────────┼───────────────────────────────┤
+│  byte   │  1 byte  │  -128 to 127                  │
+│  short  │  2 bytes │  -32,768 to 32,767            │
+│  int    │  4 bytes │  ±2.1 billion ⭐ MOST USED    │
+│  long   │  8 bytes │  Very large numbers (add L)   │
+├─────────┼──────────┼───────────────────────────────┤
+│  float  │  4 bytes │  Decimal (add f) - 7 digits   │
+│  double │  8 bytes │  Decimal ⭐ MOST USED         │
+├─────────┼──────────┼───────────────────────────────┤
+│  char   │  2 bytes │  Single character 'A'         │
+│  boolean│  1 bit   │  true or false                │
+└─────────┴──────────┴───────────────────────────────┘`
       },
       {
         title: "Variable Declaration and Initialization",
@@ -284,7 +674,62 @@ export const curriculumData: DayContent[] = [
           "Combined: int age = 25;",
           "Multiple: int x = 5, y = 10, z = 15;"
         ],
-        trainerNotes: "Live code each example. Show compilation errors for uninitialized variables."
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now let's learn HOW to create variables. There are two steps - but you can combine them."
+
+📌 STEP-BY-STEP BREAKDOWN:
+
+**STEP 1: DECLARATION (Creating the box)**
+\`\`\`java
+int age;  // Creates an empty box labeled 'age'
+\`\`\`
+"At this point, the box exists but is EMPTY. If you try to use it, Java will complain!"
+
+**STEP 2: INITIALIZATION (Filling the box)**
+\`\`\`java
+age = 25;  // Puts the value 25 into the box
+\`\`\`
+
+**COMBINED (Most common approach)**
+\`\`\`java
+int age = 25;  // Creates box AND fills it in one line
+\`\`\`
+
+📌 LIVE DEMO - LET'S SEE WHAT HAPPENS:
+
+\`\`\`java
+int age;
+System.out.println(age);  // ERROR! Variable not initialized
+\`\`\`
+
+"Java protects you from using empty variables. This is a GOOD thing - prevents bugs!"
+
+📌 MULTIPLE DECLARATIONS:
+\`\`\`java
+// Method 1: Separate lines (cleaner)
+int x = 5;
+int y = 10;
+int z = 15;
+
+// Method 2: Same line (shorter)
+int x = 5, y = 10, z = 15;
+\`\`\`
+
+💡 BEST PRACTICE:
+"In professional code, we prefer separate lines - it's more readable and easier to debug."
+
+📌 CONSTANTS (BONUS TOPIC):
+"What if a value should NEVER change? Use 'final':
+\`\`\`java
+final double PI = 3.14159;
+PI = 3.14;  // ERROR! Cannot change a final variable
+\`\`\`
+Convention: CONSTANT_NAMES in UPPER_SNAKE_CASE"
+
+⚠️ COMMON ERRORS TO SHOW:
+1. "variable age might not have been initialized"
+2. "cannot assign a value to final variable"`
       },
       {
         title: "Arithmetic Operators",
@@ -296,7 +741,68 @@ export const curriculumData: DayContent[] = [
           "% Modulus (remainder)",
           "++ Increment, -- Decrement"
         ],
-        trainerNotes: "Emphasize integer division behavior: 5/2 = 2, not 2.5"
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now let's do math with Java! These operators work mostly like you'd expect, but there's one BIG GOTCHA I'll show you."
+
+📌 THE BASIC OPERATORS:
+
+\`\`\`java
+int a = 10, b = 3;
+
+System.out.println(a + b);  // 13 (Addition)
+System.out.println(a - b);  // 7  (Subtraction)  
+System.out.println(a * b);  // 30 (Multiplication)
+System.out.println(a / b);  // 3  (Division) ← WAIT, WHAT?!
+System.out.println(a % b);  // 1  (Modulus/Remainder)
+\`\`\`
+
+⚠️ THE BIG GOTCHA - INTEGER DIVISION:
+
+"10 / 3 = 3? Not 3.33? YES! When both numbers are integers, Java TRUNCATES (cuts off) the decimal part!"
+
+\`\`\`java
+int result = 10 / 3;       // 3 (not 3.33!)
+int result2 = 5 / 2;       // 2 (not 2.5!)
+double result3 = 10.0 / 3; // 3.333... (at least one double)
+\`\`\`
+
+"This is the #1 bug freshers make in interviews! Remember: int/int = int (always truncated)"
+
+📌 THE MODULUS OPERATOR (%):
+
+"Modulus gives you the REMAINDER after division. Super useful!"
+
+Real-world uses:
+- Check if number is even: \`if (num % 2 == 0)\`
+- Get last digit: \`int lastDigit = num % 10;\`
+- Cycle through values: \`position = count % 5;\`
+
+📌 INCREMENT & DECREMENT:
+
+\`\`\`java
+int x = 5;
+x++;  // x is now 6 (same as x = x + 1)
+x--;  // x is now 5 (same as x = x - 1)
+
+// PRE vs POST (Tricky interview question!)
+int a = 5;
+System.out.println(a++);  // Prints 5, THEN a becomes 6
+System.out.println(++a);  // a becomes 7 first, THEN prints 7
+\`\`\`
+
+💡 INTERVIEW TIP:
+"Pre-increment (++a) and post-increment (a++) questions are VERY common in interviews. Practice them!"
+
+📌 OPERATOR PRECEDENCE (BODMAS/PEMDAS):
+\`\`\`
+Parentheses → * / % → + -
+\`\`\`
+
+\`\`\`java
+int result = 2 + 3 * 4;    // 14 (not 20!) - multiplication first
+int result2 = (2 + 3) * 4; // 20 - parentheses first
+\`\`\``
       },
       {
         title: "Comparison & Logical Operators",
@@ -308,7 +814,78 @@ export const curriculumData: DayContent[] = [
           "|| Logical OR",
           "! Logical NOT"
         ],
-        trainerNotes: "Create truth tables for AND, OR. Common mistake: = vs =="
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"Now let's learn how to COMPARE things and make DECISIONS. These operators return true or false."
+
+📌 COMPARISON OPERATORS:
+
+\`\`\`java
+int age = 18;
+
+age == 18  // true  (Is age equal to 18?)
+age != 18  // false (Is age NOT equal to 18?)
+age > 17   // true  (Is age greater than 17?)
+age < 21   // true  (Is age less than 21?)
+age >= 18  // true  (Is age greater than OR equal to 18?)
+age <= 18  // true  (Is age less than OR equal to 18?)
+\`\`\`
+
+⚠️ THE #1 MISTAKE - SINGLE vs DOUBLE EQUALS:
+
+\`\`\`java
+if (age = 18)   // WRONG! This ASSIGNS 18 to age
+if (age == 18)  // CORRECT! This COMPARES
+\`\`\`
+
+"I've seen senior developers make this mistake. ALWAYS use == for comparison!"
+
+📌 LOGICAL OPERATORS:
+
+"These combine multiple conditions:"
+
+\`\`\`java
+boolean isAdult = true;
+boolean hasLicense = false;
+
+isAdult && hasLicense  // false (AND - BOTH must be true)
+isAdult || hasLicense  // true  (OR - AT LEAST ONE must be true)
+!isAdult               // false (NOT - flips the value)
+\`\`\`
+
+📌 TRUTH TABLES (Draw on whiteboard):
+
+\`\`\`
+AND (&&)           OR (||)           NOT (!)
+T && T = T         T || T = T        !T = F
+T && F = F         T || F = T        !F = T
+F && T = F         F || T = T
+F && F = F         F || F = F
+\`\`\`
+
+💡 REAL-WORLD EXAMPLE:
+
+"Can this person enter the club?"
+\`\`\`java
+boolean isAdult = age >= 18;
+boolean hasID = true;
+boolean dresscode = true;
+
+boolean canEnter = isAdult && hasID && dresscode;
+\`\`\`
+
+📌 SHORT-CIRCUIT EVALUATION:
+
+"Java is smart - it stops early if the result is already known:"
+\`\`\`java
+false && anything  // Java doesn't check 'anything' - already false!
+true || anything   // Java doesn't check 'anything' - already true!
+\`\`\`
+
+"This is useful for null checks:
+\`\`\`java
+if (name != null && name.length() > 0)  // Safe! Won't crash if name is null
+\`\`\`"`
       },
       {
         title: "Type Casting",
@@ -318,7 +895,76 @@ export const curriculumData: DayContent[] = [
           "Explicit casting: larger to smaller type (manual)",
           "double to int: double d = 5.7; int x = (int) d;"
         ],
-        trainerNotes: "Show data loss with explicit casting. double 5.7 becomes int 5."
+        trainerNotes: `🎯 TRAINER EXPLANATION:
+
+"What happens when you want to put an integer value into a double variable, or vice versa? That's TYPE CASTING."
+
+📌 TWO TYPES OF CASTING:
+
+**1. IMPLICIT CASTING (Automatic) - SAFE**
+"Java automatically converts smaller types to larger types - no data loss possible."
+
+\`\`\`java
+int myInt = 100;
+double myDouble = myInt;  // Automatic! 100 → 100.0
+
+// The hierarchy (left to right, automatic):
+byte → short → int → long → float → double
+\`\`\`
+
+"Like pouring water from a cup into a bucket - no spillage!"
+
+**2. EXPLICIT CASTING (Manual) - RISKY**
+"When going from larger to smaller, YOU must tell Java it's okay - and you might lose data!"
+
+\`\`\`java
+double myDouble = 9.78;
+int myInt = (int) myDouble;  // Manual casting needed!
+System.out.println(myInt);   // Output: 9 (decimal LOST!)
+\`\`\`
+
+"Like pouring water from a bucket into a cup - some will spill!"
+
+📌 THE CASTING SYNTAX:
+\`\`\`java
+targetType variable = (targetType) value;
+\`\`\`
+
+📌 LIVE DEMO - DATA LOSS:
+
+\`\`\`java
+double price = 99.99;
+int rupees = (int) price;  // 99 (not 100 - it TRUNCATES, not ROUNDS!)
+
+double pi = 3.14159;
+int approxPi = (int) pi;   // 3
+
+// Even big to small int types need casting:
+int bigNumber = 130;
+byte smallNumber = (byte) bigNumber;  // Overflow! Gets weird value
+\`\`\`
+
+⚠️ COMMON INTERVIEW QUESTION:
+
+\`\`\`java
+byte b = 50;
+b = b + 1;  // ERROR! Why?
+\`\`\`
+
+"Because b + 1 results in an int! Fix:
+\`\`\`java
+b = (byte)(b + 1);  // Explicit cast
+// OR
+b += 1;             // Compound operators handle it automatically
+\`\`\`
+
+💡 PRACTICAL TIP:
+"In real projects, explicit casting is often a code smell. If you're casting frequently, maybe you chose the wrong data type to begin with!"
+
+📌 WHEN IS CASTING USEFUL?
+- Converting double to int for display: (int) percentComplete + "%"
+- Working with legacy code that uses different types
+- Performance optimization in very specific cases"`
       }
     ],
     lessonPlan: {
